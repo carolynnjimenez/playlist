@@ -1,3 +1,4 @@
+/* global $*/
 
 // BELOW Update the songs to your favorites songs. There should be at least 4.
 var songs = [
@@ -39,7 +40,7 @@ function displaySongInfo(){
     });
     
     imageLinks.forEach(function(image){
-        $("#images").append("<img src=\"" + image + "\">")
+        $("#images").append("<img src=\"" + image + "\">");
     });
     
     songLengths.forEach(function(length){
@@ -52,12 +53,12 @@ function displaySongInfo(){
 }
 
 function emptySongInfo(){
-    $("#song").empty();
+    $("#songs").empty();
     // Use jQuery to empty all of the remaining divs
-    $("#artist").empty();
-    $("#image").empty();
-    $("#length").empty();
-    $("#link").empty();
+    $("#artists").empty();
+    $("#images").empty();
+    $("#lengths").empty();
+    $("#links").empty();
 
 }
 
@@ -72,14 +73,14 @@ function addSongInfo(){
     songs.push(songName);
     imageLinks.push(image);
     artists.push(artistName);
-    lengths.push(songLength);
+    songLengths.push(songLength);
     links.push(link);
 }
 
 $("#add").click(function() {
     addSongInfo();
-    displaySongInfo();
     emptySongInfo();
+    displaySongInfo();
 });
 
 displaySongInfo();
